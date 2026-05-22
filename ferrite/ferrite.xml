@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Ferrite</Name>
+  <Repository>ghcr.io/syntlyx/ferrite-server:latest</Repository>
+  <Registry>https://github.com/syntlyx/ferrite-server/pkgs/container/ferrite-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/syntlyx/ferrite-server/issues</Support>
+  <Project>https://github.com/syntlyx/ferrite-server</Project>
+  <Overview>Ferrite is a Rust DNS sinkhole and filtering API server. It blocks ads and trackers at the DNS level, supports encrypted upstream resolvers, stores query statistics, and provides a web/API management surface.</Overview>
+  <Category>Network:Management Security: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/ferrite/ferrite.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/icons/ferrite.svg</Icon>
+  <ExtraParams>--cap-add=NET_BIND_SERVICE</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Ports 53 TCP/UDP and 80 TCP must be available on the selected Unraid network/IP. A custom Docker network or fixed IP is recommended because the Unraid web UI often already uses host port 80. All Ferrite config, SQLite data, blocklist cache, snapshots, and web assets are stored under /mnt/user/appdata/ferrite.</Requires>
+  <Config Name="Appdata" Target="/var/lib/ferrite" Default="/mnt/user/appdata/ferrite" Mode="rw" Description="Stores Ferrite config, SQLite database, blocklist cache, snapshots, and web assets." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ferrite</Config>
+  <Config Name="DNS TCP" Target="53" Default="53" Mode="tcp" Description="DNS TCP listener." Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="DNS UDP" Target="53" Default="53" Mode="udp" Description="DNS UDP listener." Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="Web UI" Target="80" Default="80" Mode="tcp" Description="Ferrite API and web UI." Type="Port" Display="always" Required="true" Mask="false">80</Config>
+</Container>

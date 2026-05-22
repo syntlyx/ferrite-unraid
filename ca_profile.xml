@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/icons/ferrite.svg</Icon>
+  <Profile>Unraid templates for Ferrite, a Rust DNS sinkhole and filtering API server.</Profile>
+  <WebPage>https://github.com/syntlyx/ferrite-server</WebPage>
+  <Forum>https://github.com/syntlyx/ferrite-server/issues</Forum>
+</Maintainer>
