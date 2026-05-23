@@ -27,8 +27,8 @@ Ferrite stores all mutable state below that appdata path:
 Updating the Docker image should not remove settings, database history, caches,
 or web assets.
 
-The Community Applications icon is copied from the Ferrite web UI mark
-(`ferrite-mark.svg`) so the Unraid listing matches the dashboard branding.
+The Community Applications icon is exported from the Ferrite web UI mark as
+`icons/ferrite.png` so the Unraid listing matches the dashboard branding.
 
 Ferrite listens on container port 80 for the API/web UI. A custom Docker network
 or fixed IP is recommended on Unraid because the Unraid web UI often already

@@ -22,8 +22,13 @@ jobs:
       - name: Validate XML
         run: xmllint --noout ca_profile.xml ferrite/ferrite.xml icons/ferrite.svg
 
+      - name: Validate icon
+        run: |
+          test -s icons/ferrite.png
+          file icons/ferrite.png | grep -q "PNG image data"
+
       - name: Check published references
         run: |
           grep -q "ghcr.io/syntlyx/ferrite-server:latest" ferrite/ferrite.xml
           grep -q "https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/ferrite/ferrite.xml" ferrite/ferrite.xml
-          grep -q "https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/icons/ferrite.svg" ferrite/ferrite.xml
+          grep -q "https://raw.githubusercontent.com/syntlyx/ferrite-unraid/main/icons/ferrite.png" ferrite/ferrite.xml
